@@ -3,8 +3,17 @@
 
 <mapper namespace="User">
 	<select id="getUserLoginInfo" resultType="user">
-		select id, password from user
+		select * from user
 		where id=#{id} and password=#{password}
 	</select>
+	<select id="getUser" resultType="user">
+		select * from user
+		where uid=#{uid}
+	</select>
+	<update id="updateUser">
+		update user
+		set uname=#{uname}, id=#{id}, password=#{password}
+		where uid=#{uid}
+	</update>
 
 </mapper>

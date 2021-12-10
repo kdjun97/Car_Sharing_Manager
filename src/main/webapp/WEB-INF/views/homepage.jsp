@@ -37,7 +37,7 @@
 </head>
 <body>
 <h1>Room</h1>
-<p>안녕하세요."${login.id}"님.</p><a href="./makeRoom">방 만들기</a><button type="button" onclick="location.href='editUser'">회원정보수정</button>
+<p>환영합니다. [${login.uname}]님.</p><a href="./makeRoom/${login.uid}">방 만들기</a><button type="button" onclick="location.href='editUser/${login.uid}'">회원정보수정</button>
 <table id="list" width="90%">
 <tr>
 	<th>방번호</th>
@@ -47,11 +47,10 @@
 </tr>
 <c:forEach items="${list}" var="u">
 	<tr>
-		<td>${u.seq}</td>
-		<td>${u.title}</td>
-		<td>${u.content}</td>
-		<td><a href="./editform/${u.seq}">글수정</a></td>
-<!--<td><a href="javascript:delete_ok('${u.seq}')">글삭제</a></td>-->
+		<td>${u.room_num}</td>
+		<td>${u.room_count}</td>
+		<td>d</td>
+		<td><a href="./editform/${u.room_num}">글수정</a></td>
 	</tr>
 </c:forEach>
 </table>

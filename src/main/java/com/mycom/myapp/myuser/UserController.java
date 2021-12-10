@@ -39,11 +39,14 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping(value = "/login/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/logout", method = RequestMethod.GET)
 	public String loginCheck(HttpSession session) {
 		session.invalidate(); // 세션 변수를 지움
 		return "redirect:login";
 	}
+	
+//	@RequestMapping(value = "/login/logout", method = RequestMethod.GET)
+	
 		
 	
 }

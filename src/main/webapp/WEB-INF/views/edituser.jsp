@@ -6,29 +6,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Edit Form</title>
+<title>회원정보수정</title>
 </head>
 <body>
 
-<h1>Edit Form</h1>
-<form:form commandName="boardVO" method="POST" action="../editok">
-	<form:hidden path="seq"/>
+<h1>회원정보수정</h1>
+<form:form commandName="userVO" method="POST" action="../editok">
+	<form:hidden path="uid"/>
 	<table id="edit">
 		<tr>
-            <td>Title:</td>
-            <td><form:input path="title" /></td>
+            <td>Name:</td>
+            <td><form:input path="uname" /></td>
          </tr>
          <tr>
-            <td>Writer:</td>
-            <td><form:input path="writer" /></td>
+            <td>id:</td>
+            <td><form:input path="id" /></td>
          </tr>
          <tr>
-            <td>Content:</td>
-            <td><form:textarea cols="50" rows="5" path="content" /></td>
+            <td>password</td>
+            <td><form:textarea cols="20" rows="1" path="password" /></td>
          </tr>
 	</table>
 	<input type="submit" value="수정하기"/>
-	<input type="button" value="취소하기" onclick="location.href='/list'"/>
+	<input type="button" value="취소하기" onclick="location.href='../list'"/>
 </form:form>
 
 </body>

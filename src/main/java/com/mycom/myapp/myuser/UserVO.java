@@ -7,7 +7,6 @@ public class UserVO {
 	private String uname;
 	private String id;
 	private String password;
-	private String contents;
 	private int room_num;
 	private Date regdate;
 	private boolean room_master;
@@ -36,12 +35,6 @@ public class UserVO {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public String getContents() {
-		return contents;
-	}
-	public void setContents(String contents) {
-		this.contents = contents;
 	}
 	public int getRoom_num() {
 		return room_num;
