@@ -15,5 +15,10 @@
 		set uname=#{uname}, id=#{id}, password=#{password}
 		where uid=#{uid}
 	</update>
+	<update id="updateRoomNum">
+		update user
+		set room_num=#{room_num}
+		where uid=#{uid}
+	</update>
 
 </mapper>

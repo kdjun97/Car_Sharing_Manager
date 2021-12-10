@@ -6,9 +6,9 @@
 		select * from room order by room_num desc
 	</select>
 	<insert id="insertRoom">
-		insert into room (room_complete, room_count)
+		insert into room (room_master, room_contents)
 		values
-		(#{room_complete} , #{room_count})
+		(#{room_master} , #{room_contents})
 	</insert>
 
 </mapper>

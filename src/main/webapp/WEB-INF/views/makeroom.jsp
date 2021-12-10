@@ -11,17 +11,14 @@
 <body>
 
 <h1>방 만들기</h1>
-<form:form commandName="roomVO" method="POST" action="../makeok">
-	<form:hidden path="room_master" value="uid"/>
+<form action="../makeok" method="post">
 	<table id="edit">
-         <tr>
-            <td>방 내용</td>
-            <td><form:textarea cols="50" rows="3" path="room_contents" /></td>
-         </tr>
+	<tr><td><input type="hidden" name="room_master" value="${id}"/></td></tr>
+	<tr><td>Contents:</td><td><textarea cols="50" rows="5" name="room_contents"></textarea></td></tr>
 	</table>
-	<input type="submit" value="방만들기"/>
+	<button type="submit">방만들기</button>
 	<input type="button" value="취소하기" onclick="location.href='../list'"/>
-</form:form>
+</form>
 
 </body>
 </html>

@@ -5,7 +5,14 @@ public class RoomVO {
 	private boolean room_complete;
 	private int room_count;
 	private String room_contents;
+	private int room_master;
 	
+	public int getRoom_master() {
+		return room_master;
+	}
+	public void setRoom_master(int room_master) {
+		this.room_master = room_master;
+	}
 	public String getRoom_contents() {
 		return room_contents;
 	}

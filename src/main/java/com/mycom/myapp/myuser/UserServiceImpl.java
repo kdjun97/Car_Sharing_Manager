@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService{
 	public int updateUser(UserVO vo) {
 		return userDAO.updateUser(vo);
 	}
+	
+	@Override
+	public int updateRoomNum(UserVO vo) {
+		return userDAO.updateRoomNum(vo);
+	}
 }

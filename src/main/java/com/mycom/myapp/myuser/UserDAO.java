@@ -23,6 +23,11 @@ public class UserDAO {
 		int result = sqlSession.insert("User.updateUser", vo);
 		return result;
 	}
+	
+	public int updateRoomNum(UserVO vo) {
+		int result = sqlSession.insert("User.updateRoomNum", vo);
+		return result;
+	}
 
 	public int deleteUser(int id) {
 		int result = sqlSession.insert("User.deleteUser", id);

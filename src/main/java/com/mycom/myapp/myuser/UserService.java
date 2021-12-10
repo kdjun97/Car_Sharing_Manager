@@ -9,4 +9,5 @@ public interface UserService {
 	public UserVO getUser(int seq);
 	public UserVO getUserLoginInfo(UserVO vo);
 	public List<UserVO> getUserList();
+	public int updateRoomNum(UserVO vo);
 }

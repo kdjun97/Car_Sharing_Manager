@@ -49,7 +49,7 @@
 	<tr>
 		<td>${u.room_num}</td>
 		<td>${u.room_count}</td>
-		<td>d</td>
+		<td>${u.room_contents}</td>
 		<td><a href="./editform/${u.room_num}">글수정</a></td>
 	</tr>
 </c:forEach>

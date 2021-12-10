@@ -29,8 +29,7 @@ public class RoomController {
 	@RequestMapping(value = "/room/makeRoom/{id}", method = RequestMethod.GET)
 	public String roomMake(@PathVariable("id") int id, Model model) {
 		
-		RoomVO rvo = new RoomVO();
-		model.addAttribute("rvo", rvo);		
+		model.addAttribute("id", id);		
 		
 		return "makeroom";
 	}
@@ -42,7 +41,12 @@ public class RoomController {
 		if (i==0)
 			System.out.println("방 만들기 실패");
 		else
+		{
 			System.out.println("방 만들기 성공!!");
+			UserVO uservo = userDAO.getUser(rvo.getRoom_master());
+			uservo.setRoom_num(rvo.getRoom_master());
+			userDAO.updateRoomNum(uservo);
+		}
 		
 		return "redirect:/room/list";
 	}
