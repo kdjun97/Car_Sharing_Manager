@@ -80,7 +80,31 @@ public class RoomController {
 		System.out.println("방번호:"+num+"uid"+id);
 		RoomVO rvo = roomService.getRoom(num);
 		UserVO uvo = userService.getUser(id);
-		return "";
+		if ((rvo.getRoom_master() == uvo.getUid()) || (rvo.getRoom_num() == uvo.getRoom_num()))
+		{
+			// count하지않음. 방장은 바로 입장 혹은 이미 방에 입장권한이 있는 사람은 패스
+			System.out.println("이미 권한 있음");
+			return "detail";
+		}
+		else if (uvo.getRoom_num() == -1 && rvo.getRoom_count() < 4)
+		{
+			// 방 정보가 없고 (방은 1개만 들어갈 수 있음. 무조건 없어야 함) 방 인원이 4명보다 작을 경우.
+			System.out.println("권한 ok");
+			// uvo에 room_num update하고 user Update
+			uvo.setRoom_num(num);
+			userService.updateRoomNum(uvo);
+			// rvo에 room_count++하고 update
+			rvo.setRoom_count(rvo.getRoom_count()+1);
+			roomService.updateRoomCount(rvo);
+			
+			return "detail";
+		}
+		else
+		{
+			// 방 입장 금지 메시지
+			System.out.println("방 입장 금지!");
+			return "";
+		}
 	}
 	
 }

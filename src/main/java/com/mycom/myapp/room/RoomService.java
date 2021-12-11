@@ -8,4 +8,5 @@ public interface RoomService {
 	public int updateRoom(RoomVO vo);
 	public RoomVO getRoom(int seq);
 	public List<RoomVO> getRoomList();
+	public int updateRoomCount(RoomVO rvo);
 }

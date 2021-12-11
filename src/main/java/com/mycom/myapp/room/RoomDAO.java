@@ -43,5 +43,10 @@ public class RoomDAO {
 		return list;
 	}
 	
+	public int updateRoomCount(RoomVO rvo) {
+		int result = sqlSession.insert("Room.updateRoomCount", rvo);
+		return result;
+	}
+	
 	
 }

@@ -10,6 +10,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
 <title>회원가입</title>
+	
 	<style>
 		.jumbotron {
   			background-color: #0000CD; 
@@ -27,6 +28,7 @@
 		}
 		
 	</style>
+	
 </head>
 
 <body>

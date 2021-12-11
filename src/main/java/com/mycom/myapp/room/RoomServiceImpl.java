@@ -35,4 +35,9 @@ public class RoomServiceImpl implements RoomService{
 	public int updateRoom(RoomVO vo) {
 		return roomDAO.updateRoom(vo);
 	}
+	
+	@Override
+	public int updateRoomCount(RoomVO rvo) {
+		return roomDAO.updateRoomCount(rvo);
+	}
 }
