@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%>
 		<h1>Car Sharing Manager</h1>
 	</div>
 	
-	<div style='width:100%;text-align:center;padding-top:100px'>
+	<div style='width:100%;text-align:center;padding-top:60px'>
 	
 	<form method="post" action="./loginok">
 		<div><label>User ID: </label>
