@@ -6,6 +6,9 @@
 - Development Environment : 
 
 --- 
+### 프로젝트 설명 
+need description  
+
 ### 사용법  
 Room List Page(HomePage)에서, 방을 만들고, 그 방에 들어갈 수 있다.  
 
