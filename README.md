@@ -44,8 +44,11 @@ roomVO, userVO 객체를 생성. (**getUser**, **getRoom**)
 방리스트 페이지 제작중...  
 회원가입 페이지 구현 완료.  
 로그아웃 기능 추가.  
+dj branch 하나 더 팜.  
+```
+```
+2021-12-12  
+count_update 로직 완료.  
 4명 이상이면 입장 못하는 기능.  
 detail page 제작중...(아직 view 연결안함 + list 부르는 부분 구현 안함)  
-dj branch 하나 더 팜.  
-count_update 로직 완료.  
 ```
