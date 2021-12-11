@@ -37,7 +37,8 @@
 </head>
 <body>
 <h1>Room</h1>
-<p>환영합니다. [${login.uname}]님.</p><a href="./makeRoom/${login.uid}">방 만들기</a><button type="button" onclick="location.href='editUser/${login.uid}'">회원정보수정</button>
+<p>환영합니다. [${login.uname}]님.<a href="../login/logout">로그아웃</a></p>
+<a href="./makeRoom/${login.uid}">방 만들기</a><button type="button" onclick="location.href='editUser/${login.uid}'">회원정보수정</button>
 <table id="list" width="90%">
 <tr>
 	<th>방번호</th>
@@ -50,7 +51,7 @@
 		<td>${u.room_num}</td>
 		<td>${u.room_count}</td>
 		<td>${u.room_contents}</td>
-		<td><a href="./editform/${u.room_num}">글수정</a></td>
+		<td><a href="./enter/${u.room_num}">방입장</a></td>
 	</tr>
 </c:forEach>
 </table>

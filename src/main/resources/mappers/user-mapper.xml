@@ -20,5 +20,10 @@
 		set room_num=#{room_num}
 		where uid=#{uid}
 	</update>
+	<insert id="insertUser">
+		insert into user (uid, uname, id, password)
+		values
+		(#{uid} , #{uname} , #{id}, #{password})
+	</insert>
 
 </mapper>

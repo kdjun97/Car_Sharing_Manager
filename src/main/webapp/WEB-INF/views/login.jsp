@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
 		<div><label>User ID: </label><input type='text' name='id' /></div>
 		<div><label>Password: </label>
 		<input type='password' name='password' /></div>
-		<button type='submit'>login</button>
+		<button type='submit'>login</button><button type="button" onclick="location.href='register'">register</button>
 	</form>
 	</div>
 </body>

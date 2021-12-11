@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+// UserController 지만 LoginController인것같은 느낌.... 나중에 디렉토리 구조랑, 파일명 바꿔야겠음.
 
 @Controller
 public class UserController {
@@ -39,14 +40,26 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping(value = "/user/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/logout", method = RequestMethod.GET)
 	public String loginCheck(HttpSession session) {
 		session.invalidate(); // 세션 변수를 지움
 		return "redirect:login";
 	}
 	
-//	@RequestMapping(value = "/login/logout", method = RequestMethod.GET)
 	
-		
+	@RequestMapping(value = "/login/register", method = RequestMethod.GET)
+	public String loginRegister() {
+		return "register";
+	}
+	
+	@RequestMapping(value = "/login/registerok", method = RequestMethod.POST)
+	public String loginRegisterOk(UserVO vo) {
+		int i = userService.insertUser(vo);
+		if (i == 0)
+			System.out.println("register failed!");
+		else
+			System.out.println("register complete!");
+		return "redirect:login";
+	}	
 	
 }
