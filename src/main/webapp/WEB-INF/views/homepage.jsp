@@ -14,7 +14,7 @@
   background-color: #fff;
   z-index: 9999;
   border: 0;
-  font-size: 20px !important;
+  font-size: 15px !important;
   line-height: 1.42857143 !important;
   letter-spacing: 4px;
   border-radius: 0;
@@ -59,6 +59,10 @@
   background-color: #006bb3;
   color: white;
 }
+
+#button{
+		margin-right:-50px;
+	}
 </style>
 <script>
 	function delete_ok(id){
@@ -90,8 +94,7 @@
 	</div>
 	<div style='width:100%; text-align:left; margin-top: 30px; margin-right:-30px;'>
 	
-	 <button type="button" onclick="location.href='makeRoom/${login.uid}'">New</button>
-	 
+	 <button type="button" onclick="location.href='makeRoom/${login.uid}' " style="padding:10px 20px; text-align:center; color:pink;">New</button>
 <table id="list" width="90%" padding="10px">
 <tr>
 	<th>방번호</th>
