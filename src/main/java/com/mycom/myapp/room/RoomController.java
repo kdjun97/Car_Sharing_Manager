@@ -1,5 +1,7 @@
 package com.mycom.myapp.room;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,19 +11,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mycom.myapp.board.BoardVO;
 import com.mycom.myapp.myuser.UserDAO;
+import com.mycom.myapp.myuser.UserService;
 import com.mycom.myapp.myuser.UserVO;
 
 @Controller
 public class RoomController {
 	@Autowired
-	RoomDAO roomDAO;
+	RoomService roomService;
 	
 	@Autowired
-	UserDAO userDAO;
+	UserService userService;
 	
 	@RequestMapping(value = "/room/list", method = RequestMethod.GET)
 	public String roomlist(Model model) {
-		model.addAttribute("list", roomDAO.getRoomList());
+		model.addAttribute("list", roomService.getRoomList());
 		return "homepage";
 	}
 	
@@ -36,16 +39,16 @@ public class RoomController {
 	
 	@RequestMapping(value = "/room/makeok", method = RequestMethod.POST)
 	public String roomMakeOK(RoomVO rvo) {
-		int i = roomDAO.insertRoom(rvo);
+		int i = roomService.insertRoom(rvo);
 		
 		if (i==0)
 			System.out.println("방 만들기 실패");
 		else
 		{
 			System.out.println("방 만들기 성공!!");
-			UserVO uservo = userDAO.getUser(rvo.getRoom_master());
+			UserVO uservo = userService.getUser(rvo.getRoom_master());
 			uservo.setRoom_num(rvo.getRoom_master());
-			userDAO.updateRoomNum(uservo);
+			userService.updateRoomNum(uservo);
 		}
 		
 		return "redirect:/room/list";
@@ -56,7 +59,7 @@ public class RoomController {
 	public String roomEditUser(@PathVariable("id") int id, Model model) {
 		System.out.println("Edit user 안");
 		
-		UserVO userVO = userDAO.getUser(id);
+		UserVO userVO = userService.getUser(id);
 		model.addAttribute("userVO", userVO);
 		
 		return "edituser";
@@ -64,11 +67,20 @@ public class RoomController {
 	
 	@RequestMapping(value = "/room/editok", method = RequestMethod.POST)
 	public String editPostOK(UserVO vo) {
-		int i = userDAO.updateUser(vo);
+		int i = userService.updateUser(vo);
 		if (i==0)
 			System.out.println("데이터 수정 실패");
 		else
 			System.out.println("데이터 수정 성공!!");
 		return "redirect:../login/login";
 	}
+	
+	@RequestMapping(value = "/room/enter/{num}/{id}", method = RequestMethod.GET)
+	public String roomEnter(@PathVariable("num") int num, @PathVariable("id") int id) {
+		System.out.println("방번호:"+num+"uid"+id);
+		RoomVO rvo = roomService.getRoom(num);
+		UserVO uvo = userService.getUser(id);
+		return "";
+	}
+	
 }
