@@ -30,6 +30,7 @@ pageEncoding="UTF-8"%>
 			margin-right:-30px;
 			padding : 15px;
 		}
+		
 	</style>
 </head>
 
@@ -50,7 +51,7 @@ pageEncoding="UTF-8"%>
 		<input type='password' name='password' /></div>
 		 <div id="btn_group">
 			<button type='submit'style="border:none;" >login</button>
-			<button type="button" onclick="location.href='register'" style="border:none;">register</button>
+			<button type="button" onclick="location.href='register'" style="border:none; ">register</button>
  		</div>
 	</form>
 	</div>

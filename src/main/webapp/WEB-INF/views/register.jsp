@@ -6,21 +6,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 <title>회원가입</title>
+	<style>
+		.jumbotron {
+  			background-color: #0000CD; 
+  			color: #ffffff;
+  			padding: 100px 25px;
+  			text-align: center;
+		}
+		#btn_group{
+		
+			font-size:15px;
+		}
+		table {
+   			margin-left:auto; 
+    		margin-right:auto;
+		}
+		
+	</style>
 </head>
+
 <body>
-
-<h1>회원가입</h1>
-<form action="./registerok" method="post">
+	<div class="jumbotron text-center">
+		<h1>회원가입</h1>
+	</div>
+	
+	<div style='width:100%;text-align:center;padding-top:80px'>
+		
+	<form action="./registerok" method="post">
 	<table id="edit">
-		<tr><td>학번 :<input type="text" name="uid"/></td></tr>
-		<tr><td>이름 :<input type="text" name="uname"/></td></tr>
-		<tr><td>id :<input type="text" name="id"/></td></tr>
-		<tr><td>password :<input type="password" name="password"/></td></tr>
+		<tr><td>Student ID :	<input type="text" name="uid"/></td></tr>
+		<tr><td>Name :	<input type="text" name="uname"/></td></tr>
+		<tr><td>Id :	<input type="text" name="id"/></td></tr>
+		<tr><td>Password :	<input type="password" name="password"/></td></tr>
 	</table>
-	<button type="submit">회원가입</button>
-	<input type="button" value="취소하기" onclick="location.href='./login'"/>
+	
+		<table style='width:100%;text-align:center;padding-top:100px'></table>
+	
+	 <div id="btn_group">
+		<button type="submit" style="border:none;">회원가입</button>
+		<input type="button" value="취소하기" onclick="location.href='./login'" style="border:none;"/>
+	</div>
 </form>
-
+</div>
 </body>
 </html>
