@@ -26,6 +26,10 @@ pageEncoding="UTF-8"%>
 			color:white;
 			font-size:15px;
 		}
+		#btn_group{
+			margin-right:-30px;
+			padding : 15px;
+		}
 	</style>
 </head>
 
@@ -39,10 +43,15 @@ pageEncoding="UTF-8"%>
 	<div style='width:100%;text-align:center;padding-top:100px'>
 	
 	<form method="post" action="./loginok">
-		<div><label>User ID: </label><input type='text' name='id' /></div>
+		<div><label>User ID: </label>
+		<input type='text' name='id' /></div>
 		<div><label>Password: </label>
+		
 		<input type='password' name='password' /></div>
-		<button type='submit'>login</button><button type="button" onclick="location.href='register'">register</button>
+		 <div id="btn_group">
+			<button type='submit'style="border:none;" >login</button>
+			<button type="button" onclick="location.href='register'" style="border:none;">register</button>
+ 		</div>
 	</form>
 	</div>
 	
