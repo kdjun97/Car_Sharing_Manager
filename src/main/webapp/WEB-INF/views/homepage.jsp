@@ -107,7 +107,7 @@
 		<td>${u.room_num}</td>
 		<td>${u.room_count}</td>
 		<td>${u.room_contents}</td>
-		<td><a href="./enter/${u.room_num}">방입장</a></td>
+		<td><a href="./enter/${u.room_num}/${login.uid}">방입장</a></td>
 	</tr>
 </c:forEach>
 </table>

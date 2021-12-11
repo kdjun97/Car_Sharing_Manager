@@ -5,6 +5,11 @@
 	<select id="getRoomList" resultType="room">
 		select * from room order by room_num desc
 	</select>
+	<select id="getRoom" resultType="room">
+		select * from room 
+		where room_num=#{num}
+	</select>
+	
 	<insert id="insertRoom">
 		insert into room (room_master, room_contents)
 		values
