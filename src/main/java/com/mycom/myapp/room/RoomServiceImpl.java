@@ -22,6 +22,11 @@ public class RoomServiceImpl implements RoomService{
 	}
 	
 	@Override
+	public RoomVO getRoomFromMaster(int room_master) {
+		return roomDAO.getRoomFromMaster(room_master);
+	}
+	
+	@Override
 	public List<RoomVO> getRoomList(){
 		return roomDAO.getRoomList();
 	}

@@ -31,9 +31,14 @@ public class RoomDAO {
 		return result;
 	}
 
-	// in detail page, get one room
 	public RoomVO getRoom(int seq) {
 		RoomVO one = sqlSession.selectOne("Room.getRoom", seq);
+		return one;
+	}
+
+	// in detail page, get one room
+	public RoomVO getRoomFromMaster(int room_master) {
+		RoomVO one = sqlSession.selectOne("Room.getRoomFromMaster", room_master);
 		return one;
 	}
 	

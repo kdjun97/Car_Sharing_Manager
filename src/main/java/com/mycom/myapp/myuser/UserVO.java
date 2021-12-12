@@ -9,9 +9,15 @@ public class UserVO {
 	private String password;
 	private int room_num;
 	private Date regdate;
-	private boolean room_master;
 	private int payment;
+	private int black;
 	
+	public int getBlack() {
+		return black;
+	}
+	public void setBlack(int black) {
+		this.black = black;
+	}
 	public int getUid() {
 		return uid;
 	}
@@ -47,12 +53,6 @@ public class UserVO {
 	}
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
-	}
-	public boolean isRoom_master() {
-		return room_master;
-	}
-	public void setRoom_master(boolean room_master) {
-		this.room_master = room_master;
 	}
 	public int getPayment() {
 		return payment;

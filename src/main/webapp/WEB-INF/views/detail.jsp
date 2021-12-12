@@ -29,29 +29,37 @@
 }
 </style>
 <script>
-	function delete_ok(id){
+	function delete_ok(send_id,recv_id){
 		var a = confirm("정말로 삭제하겠습니까?");
-		if(a) location.href='deleteok/' + id;
+		if(a) location.href='../../deleteok/' + send_id + '/' + recv_id;			
+	}
+	
+	function pay_ok(send_id, recv_id) {
+		var a = confirm("입금 완료?");
+		if (a) location.href='../../payok/' + send_id + '/' + recv_id;
 	}
 </script>
 </head>
 <body>
 <h1>Detail Page</h1>
-<p>환영합니다. [${login.uname}]님! [${num}]번방입니다.<a href="../../list">방 목록 보기</a></p>
-<a href="./makeRoom/${login.uid}">방 만들기</a><button type="button" onclick="location.href='editUser/${login.uid}'">회원정보수정</button>
+<p>환영합니다. [${login.uname}]님! [${num}]번방입니다.<a href="../../list">방 목록 보기</a>
+<button type="button" onclick="location.href='../../roomok/${login.uid}'">완료 및 방 삭제</button>
+</p>
 <table id="list" width="90%">
 <tr>
-	<th>방번호</th>
-	<th>인원</th>
-	<th>내용</th>
-	<th>입장여부</th>
+	<th>학번</th>
+	<th>이름</th>
+	<th>블랙횟수</th>
+	<th>입금여부</th>
+	<th>추방</th>
 </tr>
-<c:forEach items="${list}" var="u">
+<c:forEach items="${ulist}" var="ul">
 	<tr>
-		<td>${u.room_num}</td>
-		<td>${u.room_count}</td>
-		<td>${u.room_contents}</td>
-		<td><a href="./enter/${u.room_num}/${login.uid}">방입장</a></td>
+		<td>${ul.uid}</td>
+		<td>${ul.uname}</td>
+		<td>${ul.black}</td>
+		<td><a href="javascript:pay_ok(${login.uid},${ul.uid})">입금완료</a></td>
+		<td><a href="javascript:delete_ok(${login.uid},${ul.uid})">추방</a></td>
 	</tr>
 </c:forEach>
 </table>

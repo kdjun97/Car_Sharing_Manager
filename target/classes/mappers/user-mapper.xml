@@ -10,6 +10,11 @@
 		select * from user
 		where uid=#{uid}
 	</select>
+	<select id="getRoomUserList" resultType="user">
+		select * from user
+		where room_num=#{num}
+		order by uid asc
+	</select>
 	<update id="updateUser">
 		update user
 		set uname=#{uname}, id=#{id}, password=#{password}
@@ -18,6 +23,16 @@
 	<update id="updateRoomNum">
 		update user
 		set room_num=#{room_num}
+		where uid=#{uid}
+	</update>
+	<update id="updatePayment">
+		update user
+		set payment=#{payment}
+		where uid=#{uid}
+	</update>
+	<update id="updateBlack">
+		update user
+		set black=#{black}
 		where uid=#{uid}
 	</update>
 	<insert id="insertUser">

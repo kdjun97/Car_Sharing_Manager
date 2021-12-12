@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.mycom.myapp.board.BoardVO;
+import com.mycom.myapp.room.RoomVO;
 
 @Repository
 public class UserDAO {
@@ -29,6 +30,16 @@ public class UserDAO {
 		return result;
 	}
 
+	public int updatePayment(UserVO vo) {
+		int result = sqlSession.insert("User.updatePayment", vo);
+		return result;
+	}
+	
+	public int updateBlack(UserVO vo) {
+		int result = sqlSession.insert("User.updateBlack", vo);
+		return result;
+	}
+	
 	public int deleteUser(int id) {
 		int result = sqlSession.insert("User.deleteUser", id);
 		return result;
@@ -48,6 +59,11 @@ public class UserDAO {
 	public List<UserVO> getUserList() {
 		List<UserVO> list = sqlSession.selectList("User.getUserList");
 		return list;
+	}
+	
+	public List<UserVO> getRoomUserList(int num) {
+		List<UserVO> list = sqlSession.selectList("User.getRoomUserList", num);
+		return list;		
 	}
 	
 }

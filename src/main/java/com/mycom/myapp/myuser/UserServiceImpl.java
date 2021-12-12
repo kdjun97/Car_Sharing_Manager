@@ -29,6 +29,11 @@ public class UserServiceImpl implements UserService{
 	public List<UserVO> getUserList(){
 		return userDAO.getUserList();
 	}
+	
+	@Override
+	public List<UserVO> getRoomUserList(int num) {
+		return userDAO.getRoomUserList(num);
+	}
 
 	@Override
 	public int deleteUser(int id) {
@@ -43,5 +48,15 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public int updateRoomNum(UserVO vo) {
 		return userDAO.updateRoomNum(vo);
+	}
+	
+	@Override
+	public int updatePayment(UserVO vo) {
+		return userDAO.updatePayment(vo);
+	}
+	
+	@Override
+	public int updateBlack(UserVO vo) {
+		return userDAO.updateBlack(vo);
 	}
 }
