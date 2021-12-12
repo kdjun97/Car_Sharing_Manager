@@ -38,54 +38,47 @@ body {
 	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
 }
 
-.button {
-	padding-top: 50px;
-}
+
 </style>
 </head>
 <body>
 	<div class="container">
-		<input type="button" value="이전" onclick="location.href='./login'"
-			style="border: none;" />
+		
 		<div class="input-form-backgroud row">
 
 			<div class="input-form col-md-12 mx-auto">
-				<h4 class="mb-3">회원가입</h4>
+			<input type="button" value="이전" onclick="location.href='./login'"
+			style="border: none; background-color: #92b5db; border-radius: 5px; color:white; "/>
+			<h2 class="mb-3"> </h2>
+				<h3 class="mb-3"><b>회원가입</b></h3>
 
 				<form action="./registerok" method="post">
 					<div id="edit">
 						<div class="row">
 							<div class="col-md-6 mb-3">
-								<label for="name">Student ID</label> <input type="text"
-									class="form-control" name="uid" id="Student I" placeholder=""
+								<label for="Student ID">Student ID</label> <input type="text"
+									class="form-control" name="uid" id="Student I" placeholder="Student ID"
 									value="" required>
 								<div class="invalid-feedback">Student ID를 입력해주세요.</div>
 							</div>
 							<div class="col-md-6 mb-3">
-								<label for="nickname">Name</label> <input type="text"
-									class="form-control" name="uname" id="Name" placeholder=""
+								<label for="Name">Name</label> <input type="text"
+									class="form-control" name="uname" id="Name" placeholder="Name"
 									value="" required>
 								<div class="invalid-feedback">Name 입력해주세요.</div>
 							</div>
-							<div class="mb-3">
-								<label for="email">Id</label> <input type="text"
+							<div class="col-md-6 mb-3">
+								<label for="Id">Id</label> <input type="text"
 									class="form-control" name="id" id="id" placeholder="Id"
 									required>
 								<div class="invalid-feedback">Id 입력해주세요.</div>
 							</div>
-							<div class="mb-3">
-								<label for="address">Password</label> <input type="password"
+							<div class="col-md-6 mb-3">
+								<label for="Password">Password</label> <input type="password"
 									class="form-control" name="password" id="password"
 									placeholder="Password" required>
 								<div class="invalid-feedback">Password 입력해주세요.</div>
-								<hr class="mb-4">
-								<div class="custom-control custom-checkbox">
-									<input type="checkbox" class="custom-control-input"
-										id="aggrement" required> <label
-										class="custom-control-label" for="aggrement">개인정보 수집 및
-										이용에 동의합니다.</label>
-								</div>
-								<div class="mb-4"></div>
+								
 							</div>
 						</div>
 					</div>
