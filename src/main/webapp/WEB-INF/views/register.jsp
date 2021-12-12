@@ -6,15 +6,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 <title>회원가입</title>
 	
 	<style>
 		.jumbotron {
   			background-color: #0000CD; 
   			color: #ffffff;
-  			
-  			padding: 80px 25px;
+  			padding: 100px 25px;
   			text-align: center;
 		}
 		#btn_group{
@@ -26,7 +27,6 @@
     		margin-right:auto;
 		}
 		
-		
 	</style>
 	
 </head>
@@ -36,7 +36,7 @@
 		<h1>회원가입</h1>
 	</div>
 	
-	<div style='width:100%;text-align:center;padding-top:100px'>
+	<div style='width:100%;text-align:center;padding-top:80px'>
 		
 	<form action="./registerok" method="post">
 	<table id="edit">
@@ -46,7 +46,7 @@
 		<tr><td>Password :	<input type="password" name="password"/></td></tr>
 	</table>
 	
-		<table style='width:100%;text-align:center;padding-down:50px'></table>
+		<table style='width:100%;text-align:center;padding-top:100px'></table>
 	
 	 <div id="btn_group">
 		<button type="submit" style="border:none;">회원가입</button>

@@ -6,40 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
 <title>HomePage</title>
 <style>
-.navbar {
-  margin-bottom: 0;
-  background-color: #fff;
-  z-index: 9999;
-  border: 0;
-  font-size: 15px !important;
-  line-height: 1.42857143 !important;
-  letter-spacing: 4px;
-  border-radius: 0;
-  text-align : right;
-  margin-left:-50px;
-}
-.navbar a, .navbar .navbar-brand {
-  color: pink !important;
-}
-.navbar-nav li a:hover, .navbar-nav li.active a {
-  color: red !important;
-  background-color: #fff !important;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-  color: #fff !important;
-}
-		.jumbotron {
-  			background-color: #0000CD; 
-  			color: #ffffff;
-  			padding: 100px 25px;
-  			text-align: center;
-		}
-
 #list {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -59,10 +27,6 @@
   background-color: #006bb3;
   color: white;
 }
-
-#button{
-		margin-right:-50px;
-	}
 </style>
 <script>
 	function delete_ok(id){
@@ -72,30 +36,10 @@
 </script>
 </head>
 <body>
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="collapse navbar-collapse" id="myNavbar">
-       <ul class="nav navbar-nav navbar-right">
-        	<a href="../login/logout">logout</a>
-        	<a href="./editUser/${login.uid}">회원정보수정</a>
-      
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-  
-
-	<div class="jumbotron text-center">
-		<h1>Room</h1>
-		<p>환영합니다. [${login.uname}]님.</p>
-	</div>
-	<div style='width:100%; text-align:left; margin-top: 30px; margin-right:-30px;'>
-	
-	 <button type="button" onclick="location.href='makeRoom/${login.uid}' " style="padding:10px 20px; text-align:center; color:pink;">New</button>
-<table id="list" width="90%" padding="10px">
+<h1>Room</h1>
+<p>환영합니다. [${login.uname}]님.<a href="../login/logout">로그아웃</a></p>
+<a href="./makeRoom/${login.uid}">방 만들기</a><button type="button" onclick="location.href='editUser/${login.uid}'">회원정보수정</button>
+<table id="list" width="90%">
 <tr>
 	<th>방번호</th>
 	<th>인원</th>
