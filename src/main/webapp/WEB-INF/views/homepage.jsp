@@ -1,68 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import="com.mycom.myapp.board.BoardDAO, com.mycom.myapp.board.BoardVO, java.util.*"%>
+	pageEncoding="UTF-8"%>
+<%@page
+	import="com.mycom.myapp.board.BoardDAO, com.mycom.myapp.board.BoardVO, java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<title>HomePage</title>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://localhost/weblayout/tablestyle.css">
 <style>
-.navbar {
-  margin-bottom: 0;
-  background-color: #fff;
-  z-index: 9999;
-  border: 0;
-  font-size: 15px !important;
-  line-height: 1.42857143 !important;
-  letter-spacing: 4px;
-  border-radius: 0;
-  text-align : right;
-  margin-left:-50px;
-}
-.navbar a, .navbar .navbar-brand {
-  color: pink !important;
-}
-.navbar-nav li a:hover, .navbar-nav li.active a {
-  color: red !important;
-  background-color: #fff !important;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-  color: #fff !important;
-}
 		.jumbotron {
-  			background-color: #0000CD; 
+  			background-color: #34495e; 
   			color: #ffffff;
   			padding: 100px 25px;
   			text-align: center;
 		}
-
-#list {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-#list td, #list th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align:center;
-}
-#list tr:nth-child(even){background-color: #f2f2f2;}
-#list tr:hover {background-color: #ddd;}
-#list th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #006bb3;
-  color: white;
-}
-
-#button{
-		margin-right:-50px;
-	}
 </style>
 <script>
 	function delete_ok(id){
@@ -72,45 +40,58 @@
 </script>
 </head>
 <body>
+	<div class="container">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="jumbotron text-center">	
+						<h2>
+							CarSharing <b>Room</b>
+							<p>환영합니다. [${login.uname}]님.</p>
+						</h2>
+						</div>
+					</div>
+					<div class="col-sm-6">
+					       <ul class="nav navbar-nav navbar-right">
+					
+						<a href="../login/logout" class="btn btn-danger"
+							data-toggle="modal"> <span>Log
+								out</span></a>
+						<a href="./editUser/${login.uid}" class="btn btn-info"
+							data-toggle="modal"> <span>회원정보수정</span></a>
+							       </ul>
+							
+					</div>
+				</div>
+			</div>
+			<button type="button" onclick="location.href=
+							'makeRoom/${login.uid}'" class="btn btn-success"
+							data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add
+								Room</span></button> 
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>방번호</th>
+						<th>인원</th>
+						<th>내용
+						<th>
+					</tr>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="collapse navbar-collapse" id="myNavbar">
-       <ul class="nav navbar-nav navbar-right">
-        	<a href="../login/logout">logout</a>
-        	<a href="./editUser/${login.uid}">회원정보수정</a>
-      
-      </ul>
-    </div>
-  </div>
-</nav>
+				</thead>
+				<tbody>
 
-
-  
-
-	<div class="jumbotron text-center">
-		<h1>Room</h1>
-		<p>환영합니다. [${login.uname}]님.</p>
+					<c:forEach items="${list}" var="u">
+						<tr>
+							<td>${u.room_num}</td>
+							<td>${u.room_count}</td>
+							<td>${u.room_contents}</td>
+							<td><a href="./enter/${u.room_num}/${login.uid}">방입장</a></td>
+						</tr>
+					</c:forEach>
+			</table>
+		</div>
 	</div>
-	<div style='width:100%; text-align:left; margin-top: 30px; margin-right:-30px;'>
-	
-	 <button type="button" onclick="location.href='makeRoom/${login.uid}' " style="padding:10px 20px; text-align:center; color:pink;">New</button>
-<table id="list" width="90%" padding="10px">
-<tr>
-	<th>방번호</th>
-	<th>인원</th>
-	<th>내용</th>
-	<th>입장여부</th>
-</tr>
-<c:forEach items="${list}" var="u">
-	<tr>
-		<td>${u.room_num}</td>
-		<td>${u.room_count}</td>
-		<td>${u.room_contents}</td>
-		<td><a href="./enter/${u.room_num}/${login.uid}">방입장</a></td>
-	</tr>
-</c:forEach>
-</table>
-<br/>
+
 </body>
 </html>
