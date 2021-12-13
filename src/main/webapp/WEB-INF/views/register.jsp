@@ -38,7 +38,6 @@ body {
 	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
 }
 
-
 </style>
 </head>
 <body>

@@ -9,11 +9,23 @@
 		select * from room 
 		where room_num=#{num}
 	</select>
-	
+	<select id="getRoomFromMaster" resultType="room">
+		select * from room 
+		where room_master=#{room_master}
+	</select>
 	<insert id="insertRoom">
 		insert into room (room_master, room_contents)
 		values
 		(#{room_master} , #{room_contents})
 	</insert>
+	<update id="updateRoomCount">
+		update room
+		set room_count=#{room_count}
+		where room_num=#{room_num}
+	</update>
+	<delete id="deleteRoom">
+		delete from room where room_num=#{room_num}
+	</delete>
+	
 
 </mapper>

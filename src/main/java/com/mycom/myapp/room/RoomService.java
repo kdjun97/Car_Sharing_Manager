@@ -7,5 +7,7 @@ public interface RoomService {
 	public int deleteRoom(int id);
 	public int updateRoom(RoomVO vo);
 	public RoomVO getRoom(int seq);
+	public RoomVO getRoomFromMaster(int room_master);
 	public List<RoomVO> getRoomList();
+	public int updateRoomCount(RoomVO rvo);
 }
