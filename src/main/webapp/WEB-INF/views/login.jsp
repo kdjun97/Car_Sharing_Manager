@@ -37,6 +37,7 @@ body {
 	width: 300px;
 	height: 400px;
 	padding: 30px, 20px;
+	margin-top: 100px;
 	background-color: #FFFFFF;
 	text-align: center;
 	top: 50%;

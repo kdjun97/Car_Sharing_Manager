@@ -61,4 +61,8 @@ detail page 제작 완료.
 black_list 값 증가 로직 구현 완료.  
 payment 로직 추가 완료.  
 모든 페이지 구현 완료.  
+css 스타일 적용(협업) + merge to master branch   
+- login page 적용 완료  
+- register page 적용 완료  
+- room_list page 적용 완료  
 ```  

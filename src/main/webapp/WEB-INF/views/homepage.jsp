@@ -65,8 +65,7 @@
 					</div>
 				</div>
 			</div>
-			<button type="button" onclick="location.href=
-							'makeRoom/${login.uid}'" class="btn btn-success"
+			<button type="button" onclick="location.href='./makeRoom/${login.uid}'" class="btn btn-success"
 							data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add
 								Room</span></button> 
 			<table class="table table-striped table-hover">

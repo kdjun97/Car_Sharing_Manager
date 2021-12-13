@@ -37,6 +37,7 @@ public class RoomController {
 		
 		if (userVO.getRoom_num() == -1)
 		{
+			System.out.println("방만들기 요청 처리!");
 			model.addAttribute("id", id);		
 			return "makeroom";
 		}
@@ -142,7 +143,7 @@ public class RoomController {
 		else
 			System.out.println("잘못된 접근입니다.");
 		
-		return "redirect:/room/list";
+		return "redirect:/room/enter/"+rvo.getRoom_num()+"/"+send_uvo.getUid();
 	}
 	
 	// 입금 처리
@@ -156,7 +157,10 @@ public class RoomController {
 		{	
 			recv_uvo.setPayment(0);
 			userService.updatePayment(recv_uvo);	
+			System.out.println("입금 처리 완료!");
 		}
+		else
+			System.out.println("권한이 없습니다.");
 		return "redirect:/room/enter/"+rvo.getRoom_num()+"/"+send_id;
 	}
 	
