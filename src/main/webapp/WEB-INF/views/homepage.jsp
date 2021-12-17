@@ -44,7 +44,7 @@
 		<div class="table-wrapper">
 			<div class="table-title">
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-sm-6" style="margin-left:25%;">
 						<div class="jumbotron text-center">	
 						<h2>
 							CarSharing <b>Room</b>
@@ -52,7 +52,7 @@
 						</h2>
 						</div>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6" style="float:right">
 					       <ul class="nav navbar-nav navbar-right">
 					
 						<a href="../login/logout" class="btn btn-danger"

@@ -63,19 +63,19 @@ body {
 					<table id="edit" >
 						<div class="row">
 							<div class="col-md-6 mb-3">
-								<tr>
+								<tr style="margin-top : -10px">
 									<td>Name</td>
 									<td><form:input path="uname" /></td>
 								</tr>
 							</div>
 							<div class="col-md-6 mb-3">
-								<tr>
+								<tr style="margin-top : 10px">
 									<td>id</td>
 									<td><form:input path="id" /></td>
 								</tr>
 							</div>
 							<div class="col-md-6 mb-3">
-								<tr>
+								<tr style="margin-top : 10px">
 									<td>password</td>
 									<td><form:textarea cols="20" rows="1" path="password" /></td>
 								</tr>
