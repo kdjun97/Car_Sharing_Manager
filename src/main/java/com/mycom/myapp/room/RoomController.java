@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mycom.myapp.board.BoardVO;
 import com.mycom.myapp.myuser.UserDAO;
 import com.mycom.myapp.myuser.UserService;
 import com.mycom.myapp.myuser.UserVO;

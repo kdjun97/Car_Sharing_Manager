@@ -13,7 +13,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./style.css">
 
-<title>Insert title here</title>
+<title>Login Page</title>
 <style>
 .jumbotron {
   			background-color: #34495e; 

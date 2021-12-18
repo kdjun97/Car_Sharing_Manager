@@ -3,7 +3,8 @@
 김동준, 이신비  
 
 - version : 1.0.0  
-- Development Environment : 
+- Development Environment :  
+- Deploy URL : https://angel10004.herokuapp.com/  
 
 --- 
 ### 프로젝트 설명 
@@ -65,4 +66,16 @@ css 스타일 적용(협업) + merge to master branch
 - login page 적용 완료  
 - register page 적용 완료  
 - room_list page 적용 완료  
+```  
+```  
+2021-12-17  
+css 모든 페이지 완료.  
+merge 완료.  
+```  
+```  
+2021-12-18  
+필요없는 페이지 삭제.  
+page title 수정.  
+deploy 완료. [링크](https://angel10004.herokuapp.com/)  
+
 ```  
