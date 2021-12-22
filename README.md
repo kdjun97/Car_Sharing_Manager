@@ -3,22 +3,33 @@
 김동준, 이신비  
 
 - version : 1.0.0  
-- Development Environment :  
+- Development Environment : STS 4.11.1, jre1.8
 - Deploy URL : https://angel10004.herokuapp.com/  
 
 --- 
 ### 프로젝트 설명 
-need description  
+카풀을 이용하면서, 운전자와 탑승자간에 카풀비를 제때
+주고받지 못하여 운전자가 고통스러워 한다고 한다.
+또한, 카풀은 운전자가 운전을 하면서, 번호 혹은 카톡을 물
+어보기도 힘든 상황이라, 운전이 끝난 후 따로 연락을 취해
+야한다.
+하지만, 상대방이 카풀방을 나간다면, 따로 연락을 할 수도
+없는 실정이다.
+한동대학교 학생들은 굉장히 바쁘기 때문에, 바쁜 학업 중
+카풀비 입금을 깜빡하는 경우가 많다고 한다.  
+따라서, 카풀 운전자와 카풀 이용자 간에 서로 매칭과 입금 관리까지 해주는 웹을 만들게 되었다.  
 
 ### 사용법  
 Room List Page(HomePage)에서, 방을 만들고, 그 방에 들어갈 수 있다.  
+인원수는 총 4명 제한이고, 방장만이 추방, 입금 확인, 방 파기 권한을 가진다.  
 
 ### 개선할 점
 한 user가 하나의 방에만 배정됨.(따로 처리를 해주지 않음)  
 추후, version upgrade가 되면서, user에 대한 정보를 배열로 가지거나 알고리즘을 변경할 필요가 있음.  
+Detail page에 chatting 기능이 있다면 더 좋을 것 같음.(chatting에 대한 table을 하나 만들고, 시간순으로 orderby한다면 db는 해결)  
 
 ### DB Schema 
-수정중  
+이미지 업로드 필요  
 
 ### 로직
 In Detail Page, GET METHOD로 받은, uid, room_num으로  
